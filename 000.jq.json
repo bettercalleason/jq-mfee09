@@ -1,0 +1,7 @@
+{
+  "Print to console": {
+    "prefix": "jq",
+    "body": "<script src=\"https://code.jquery.com/jquery-3.5.1.js\"\n    integrity=\"sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=\" crossorigin=\"anonymous\"></script>\n<script>\n    $0\n</script>",
+    "description": "Log output to console"
+  }
+}
