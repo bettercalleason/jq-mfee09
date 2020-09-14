@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form event</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <form action="">
+          <div class="form-group">
+            <input type="text" name="user" class="form-control" />
+          </div>
+
+          <button type="submit" class="btn btn-primary">submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let index = 0;
+
+      $("form").submit(function (event) {
+        event.preventDefault();
+        console.log("hi", index);
+        index++;
+      });
+
+      $(":text").focus(function () {
+        console.log("focus");
+      });
+
+      $(":text").blur(function () {
+        console.log("blur");
+      });
+
+      $(":text").change(function () {
+        console.log("change:", $(this).val());
+      });
+    </script>
+  </body>
+</html>
