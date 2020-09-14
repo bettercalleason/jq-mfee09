@@ -15,12 +15,12 @@
         max-width: 800px;
         height: 400px;
         background-color: #ccc;
-        /* overflow: hidden; */
+        overflow: hidden;
       }
 
       .img-wrap {
         width: 4000px;
-        left: -800px;
+        left: 0px;
         transition: 0.5s;
       }
 
@@ -28,6 +28,17 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      .slider-dots {
+        bottom: 0;
+      }
+
+      .slider-dots li {
+        width: 40px;
+        height: 10px;
+        margin: 0 4px;
+        border: 1px solid #fff;
       }
     </style>
   </head>
@@ -49,6 +60,15 @@
         <li>
           <img src="./imgs/slide5.jpg" alt="" />
         </li>
+      </ul>
+      <ul
+        class="list-unstyled slider-dots position-absolute d-flex justify-content-center w-100"
+      >
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
       </ul>
     </div>
   </body>
