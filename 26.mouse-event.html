@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mouse event</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <button class="btn-primary btn">Click</button>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".btn").click(function () {
+        console.log("click");
+      });
+
+      $(".btn").dblclick(function () {
+        console.log("dblclick");
+      });
+
+      $(".btn").contextmenu(function () {
+        console.log("contextmenu");
+      });
+
+      $(".btn").mousedown(function () {
+        console.log("mousedown");
+      });
+
+      $(".btn").mouseup(function () {
+        console.log("mouseup");
+      });
+
+      $(".btn").mouseenter(function () {
+        console.log("mouseenter");
+      });
+
+      $(".btn").mouseleave(function () {
+        console.log("mouseleave");
+      });
+
+      $(".btn").hover(
+        function () {
+          console.log("hover in");
+        },
+        function () {
+          console.log("hover out");
+        }
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prop vs attr</title>
+  </head>
+  <body>
+    <input type="checkbox" class="checkbox-1" checked="true" />
+    <!-- <span>如果你願意捐發票請打勾</span>
+    <br /> -->
+
+    <input type="checkbox" class="checkbox-2" />
+    <span>如果你不願意捐發票請打勾</span>
+    <input type="checkbox" class="checkbox-3" checked="false" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //   console.log($(".checkbox-1").prop("checked")); //true
+      //   console.log($(".checkbox-1").attr("checked")); //checked
+      console.log($(".checkbox-2").prop("checked")); //false
+      console.log($(".checkbox-2").attr("checked")); //undefined
+      //   $(".checkbox-3").prop("checked"); //true（註 3）
+      //   $(".checkbox-3").attr("checked"); //checked 
+    </script>
+  </body>
+</html>

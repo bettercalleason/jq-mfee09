@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carousel</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <style>
+      .wrap {
+        max-width: 800px;
+        height: 400px;
+        background-color: #ccc;
+        /* overflow: hidden; */
+      }
+
+      .img-wrap {
+        width: 4000px;
+        left: -800px;
+        transition: 0.5s;
+      }
+
+      li img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap mx-auto mt-5 position-relative">
+      <ul class="list-unstyled d-flex img-wrap position-absolute">
+        <li>
+          <img src="./imgs/slide1.jpg" alt="" />
+        </li>
+        <li>
+          <img src="./imgs/slide2.jpg" alt="" />
+        </li>
+        <li>
+          <img src="./imgs/slide3.jpg" alt="" />
+        </li>
+        <li>
+          <img src="./imgs/slide4.jpg" alt="" />
+        </li>
+        <li>
+          <img src="./imgs/slide5.jpg" alt="" />
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

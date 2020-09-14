@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>after select</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .box {
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="box autobg col-3">box1</div>
+        <div class="box autobg col-3">box2</div>
+        <div class="box autobg col-3">box3</div>
+        <div class="box autobg col-3">box4</div>
+        <div class="box autobg col-3">box5</div>
+        <div class="box autobg col-3">box6</div>
+        <div class="box autobg col-3">box7</div>
+        <div class="box autobg col-3">box8</div>
+        <div class="box autobg col-3">box9</div>
+        <div class="box autobg col-3">box10</div>
+        <div class="box autobg col-3">box11</div>
+        <div class="box autobg col-3">box12</div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+      }
+
+      function getRBGA() {
+        return `linear-gradient(135deg, rgba(${getRandomInt(
+          256
+        )},${getRandomInt(256)},${getRandomInt(256)},.5), rgba(${getRandomInt(
+          256
+        )},${getRandomInt(256)},${getRandomInt(256)},.8)`;
+      }
+
+      const elements = document.querySelectorAll(".autobg");
+
+      Array.from(elements).forEach((element, index) => {
+        element.style.backgroundImage = getRBGA();
+      });
+
+      // $('.autobg').each(function (index, currentElement) {
+      //     currentElement.style.backgroundImage = getRBGA();
+      // });
+    </script>
+
+    <script>
+      $(".box").click(function () {
+        $(this)
+          .css("background", "lightblue")
+          .nextAll()
+          .css("background", "lightblue");
+        $(this).data("changed");
+      });
+    </script>
+  </body>
+</html>

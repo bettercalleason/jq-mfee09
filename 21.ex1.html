@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex1</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <table class="table table-bordered mt-5">
+          <tr>
+            <td>
+              <input class="check1" type="checkbox" name="" id="" />
+            </td>
+            <td>Elon Musk</td>
+            <td>0912345678</td>
+            <td>Elon Musk@gmail.com</td>
+          </tr>
+          <tr>
+            <td><input class="check2" type="checkbox" name="" id="" /></td>
+            <td>Mark Zuckerberg</td>
+            <td>0912345678</td>
+            <td>Mark Zuckerberg@gmail.com</td>
+          </tr>
+          <tr>
+            <td><input class="check3" type="checkbox" name="" id="" /></td>
+            <td>Bill Gates</td>
+            <td>0912345678</td>
+            <td>Bill Gates@gmail.com</td>
+          </tr>
+          <tr>
+            <td><input class="check4" type="checkbox" name="" id="" /></td>
+            <td>Larry Page</td>
+            <td>0912345678</td>
+            <td>Larry Page@gmail.com</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("input:checkbox").click(function () {
+        // 找出觸發 checkbox， 取得觸發物件的 check 狀態
+        if ($(this).attr("checked") === undefined) {
+          $(this).closest("tr").css("background", "lightblue");
+          $(this).attr("checked", true);
+        } else {
+          $(this).closest("tr").css("background", "none");
+          $(this).removeAttr("checked");
+        }
+      });
+    </script>
+  </body>
+</html>

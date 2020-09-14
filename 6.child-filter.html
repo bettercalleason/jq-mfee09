@@ -4,13 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>child filter</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("div:last-child").css("background", "red");
+    </script>
   </head>
+
   <body>
-    <span>span</span>
+    <span>1</span>
     <div class="wrap">
+      <span>1</span>
       <div class="box">box1</div>
       <div class="box">box2</div>
-      <div class="box">box3</div>
+      <div class="box">
+        <div>box100</div>
+        <div>box101</div>
+      </div>
       <div class="box">box4</div>
       <div class="box">box5</div>
       <div class="box">box6</div>
@@ -19,23 +33,16 @@
       <div class="box">box9</div>
       <div class="box">box10</div>
       <div class="box">box11</div>
-      <span>span</span>
-      <span>span</span>
+      <!-- <span>3</span>
+      <span>4</span> -->
     </div>
     <span>span</span>
+
     <div class="wrap3">
       <span>span</span>
     </div>
 
     <span>span</span>
-
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      $(".wrap :first-child").css("background", "red");
-    </script>
+    <div>hi</div>
   </body>
 </html>
