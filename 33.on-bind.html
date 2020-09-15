@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bind</title>
+  </head>
+  <body>
+    <button id="btn">click</button>
+    <p id="showAction"></p>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#btn").on({
+        mouseenter: function () {
+          $("#showAction").text("Mouse Enter");
+        },
+        click: function () {
+          $("#showAction").text("Click");
+        },
+        dblclick: function () {
+          $("#showAction").text("Double Click");
+        },
+      });
+    </script>
+  </body>
+</html>
