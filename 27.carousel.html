@@ -78,9 +78,12 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      $("li").click(function () {
+      $("li").hover(function () {
         console.log($(this).index());
+        let left = $(this).index() * -800;
+        $(".img-wrap").css("left", left);
       });
+      
     </script>
   </body>
 </html>

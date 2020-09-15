@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>progress bar</title>
+    <style>
+      body {
+        margin: 0;
+        height: 300vh;
+        transition: 0.5s;
+      }
+
+      .wrap {
+        background-color: #ddd;
+        height: 50px;
+        width: 100%;
+        position: fixed;
+      }
+
+      .progressBar {
+        background-color: pink;
+        height: 50px;
+        width: 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="progressBar"></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(window).scroll(function () {
+        let pageHeight = $("body").height();
+        let windowHeight = $(window).height();
+        let scrollTop = $(this).scrollTop();
+        let percent = (scrollTop / (pageHeight - windowHeight)) * 100 + "%";
+
+        $(".progressBar").css("width", percent);
+
+        if (scrollTop > 750) {
+          $("body").css("background", "orange");
+        } else {
+          $("body").css("background", "none");
+        }
+      });
+    </script>
+  </body>
+</html>
