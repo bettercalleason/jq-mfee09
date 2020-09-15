@@ -20,9 +20,7 @@
         console.log("hi");
       };
 
-      $("#sayHi").on("click", function () {
-        // console.log("hi");
-      });
+      $("#sayHi").on("click", sayHi);
 
       $("#on").on("click", function () {
         $("#sayHi").off("click", sayHi);

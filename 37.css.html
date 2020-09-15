@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css style</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: #faf;
+        margin-top: 20px;
+        transition: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="get">get CSS</button>
+    <button id="set">set CSS</button>
+
+    <div class="box">BOX</div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let stylecss = {
+        color: "#fff",
+        background: "#000",
+      };
+
+      $("#get").click(function () {
+        let bgData = $(".box").css("background-color");
+        console.log("bgData:", bgData);
+        console.log("bgData type:", typeof bgData);
+      });
+
+      $("#set").click(function () {
+        $(".box").css(stylecss);
+      });
+    </script>
+  </body>
+</html>
