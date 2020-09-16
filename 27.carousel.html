@@ -78,12 +78,18 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      let newIndex = 0;
+      setInterval(() => {
+        if (newIndex > 4) newIndex = 0;
+        $(".img-wrap").css("left", newIndex * -800);
+        newIndex++;
+      }, 3000);
+
       $("li").hover(function () {
         console.log($(this).index());
         let left = $(this).index() * -800;
         $(".img-wrap").css("left", left);
       });
-      
     </script>
   </body>
 </html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <title>box move</title>
+    <style>
+      .wrap {
+        position: relative;
+        width: 800px;
+        height: 400px;
+        background-color: #eee;
+      }
+
+      .box {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 120px;
+        height: 120px;
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap mx-auto">
+      <div class="box"></div>
+    </div>
+
+    <div class="py-3 text-center">
+      <div class="py-1">
+        <button class="btn btn-info" id="up">
+          <i class="fas fa-caret-up"></i>
+        </button>
+      </div>
+
+      <div>
+        <button class="btn btn-info" id="left">
+          <i class="fas fa-caret-left"></i>
+        </button>
+        <button class="btn btn-info" id="right">
+          <i class="fas fa-caret-right"></i>
+        </button>
+      </div>
+
+      <div class="py-1">
+        <button class="btn btn-info" id="down">
+          <i class="fas fa-caret-down"></i>
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let move = 20;
+      let myInterval = null;
+
+      $("#left").click(function () {
+        let newLeft = parseInt($(".box").css("left"));
+        if (newLeft > 0) {
+          $(".box").css("left", "-=" + move);
+        }
+      });
+
+      $("#right").mousedown(function () {
+        myInterval = setInterval(() => {
+          let newLeft = parseInt($(".box").css("left"));
+          if (newLeft < 680) {
+            $(".box").css("left", "+=" + move);
+          }
+        }, 300);
+      });
+
+      $("#right").mouseup(function () {
+        console.log(myInterval);
+        clearInterval(myInterval);
+      });
+
+      $("#right").click(function () {
+        // console.log(myInterval);
+        // clearInterval(myInterval);
+        // let newLeft = parseInt($(".box").css("left"));
+        // if (newLeft < 680) {
+        //   $(".box").css("left", "+=" + move);
+        // }
+      });
+
+      $(document).on("keydown", function (e) {
+        // console.log("event:", e);
+        let code = e.which;
+
+        if (code === 37) {
+          console.log("hi 37");
+          //左
+          console.log("left", $(".box").css("left"));
+          let newLeft = parseInt($(".box").css("left"));
+          if (newLeft > 0) {
+            $(".box").css("left", "-=" + move);
+          }
+        } else if (code === 38) {
+          console.log("hi 38");
+        } else if (code === 39) {
+          //右
+          console.log("hi 39");
+          let newLeft = parseInt($(".box").css("left"));
+          if (newLeft < 680) {
+            $(".box").css("left", "+=" + move);
+          }
+        } else if (code === 40) {
+          console.log("hi 40");
+        }
+      });
+    </script>
+  </body>
+</html>
