@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -69,4 +73,56 @@ span.check {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.relative-accounts {
+  width: 100%;
+  overflow: auto;
+  background-color: #fff;
+}
+
+.cards {
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.card-img-area {
+  width: 50px;
+  height: 50px;
+}
+
+.card-img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.relative-btn-left {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.411);
+  border-radius: 50%;
+}
+
+.relative-btn-left.hide {
+  display: none !important;
+}
+
+.relative-btn-right {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.411);
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+}
+
+.btn-follow {
+  position: relative;
+  bottom: 0px;
 }

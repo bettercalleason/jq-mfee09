@@ -10,6 +10,12 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./52.instagram.css" />
   </head>
 
@@ -44,13 +50,13 @@
               />
             </div>
           </div>
-          <div class="personal-info-area col-4">
+          <div class="personal-info-area col-3">
             <div class="first-row">
               <span class="username">gqtaiwan</span>
               <span class="check"></span>
               <a href="" class="btn btn-primary">追蹤</a>
             </div>
-            <div class="sec-row mt-3 d-flex">
+            <div class="sec-row mt-3 d-flex justify-content-between">
               <div class="post">
                 <span class="post-number font-weight-bold">2345</span>
                 <span>貼文</span>
@@ -66,11 +72,11 @@
             </div>
 
             <div class="third-row mt-3">
-              <p class="user-fullname font-weight-bold">GQ Taiwan</p>
-              <p class="info-text">
+              <p class="user-fullname font-weight-bold mb-1">GQ Taiwan</p>
+              <p class="info-text mb-1">
                 To become a better man, follow GQ Taiwan. 更多精彩內容請至
               </p>
-              <p>gq.com.tw/instagram</p>
+              <a href="#">gq.com.tw/instagram</a>
             </div>
           </div>
         </div>
@@ -102,6 +108,27 @@
             />
           </div> -->
         </div>
+
+        <div class="row p-4 position-relative">
+          <div class="">
+            <p class="pl-3 text-secondary font-weight-bold">相關帳號</p>
+          </div>
+          <div class="relative-accounts d-flex position-relative"></div>
+
+          <a
+            role="button"
+            class="relative-btn-left d-flex justify-content-center align-items-center text-decoration-none"
+          >
+            <i class="fas fa-angle-left"></i>
+          </a>
+
+          <a
+            role="button"
+            class="relative-btn-right d-flex justify-content-center align-items-center text-decoration-none"
+          >
+            <i class="fas fa-angle-right"></i>
+          </a>
+        </div>
       </div>
     </main>
     <script
@@ -122,7 +149,7 @@
       //Highlight url encode
       //https://www.instagram.com/graphql/query/?query_hash=d4d88dc1500312af6f937f7b804c68c3&variables=%7B%22user_id%22%3A%221371344513%22%2C%22include_chaining%22%3Atrue%2C%22include_reel%22%3Atrue%2C%22include_suggested_users%22%3Afalse%2C%22include_logged_out_extras%22%3Afalse%2C%22include_highlight_reels%22%3Atrue%2C%22include_live_status%22%3Atrue%7D
 
-      //Highlight url decode 
+      //Highlight url decode
       //https://www.instagram.com/graphql/query/?query_hash=d4d88dc1500312af6f937f7b804c68c3&variables={"user_id":"1371344513","include_chaining":true,"include_reel":true,"include_suggested_users":false,"include_logged_out_extras":false,"include_highlight_reels":true,"include_live_status":true}
 
       $.ajax({
@@ -144,19 +171,30 @@
           $(".hightlight").append(htmlString);
         }
 
-        // let highlightArray = result.graphql.user.edge_highlight_reels.edges;
+        let relativeArray = result.data.user.edge_chaining.edges;
 
-        // for (i=0; i < highlightArray.length; i++){
-        //     $('.highlight').append('<div class="circle">
-        //       <img src="url" alt="">
-        //       <p>title</p>
-        //   </div>')
+        console.log("relativeArray", relativeArray);
 
-        // }
+        for (let i = 34; i < relativeArray.length; i++) {
+          let htmlString = `<div class="cards border px-2 pt-2 pb-4 mx-3 position-relative">
+              <i class="fas fa-times float-right text-secondary"></i>
+              <div class="card-img-area mx-auto mt-3">
+                <img
+                  src="${relativeArray[i].node.profile_pic_url}"
+                  alt=""
+                />
+              </div>
+              <p class="font-weight-bold text-center text-truncate mt-3 mb-1">
+                ${relativeArray[i].node.username}
+              </p>
 
-        // let userPic = result.graphql.user.profile_pic_url_hd;
+              <p class="text-center text-truncate mb-3">${relativeArray[i].node.full_name}</p>
 
-        //   $(".personal-img img").attr("src", userPic);
+              <button class="btn btn-primary w-100 btn-sm btn-follow">追蹤</button>
+            </div>`;
+
+          $(".relative-accounts").append(htmlString);
+        }
       });
 
       $.ajax({
@@ -193,6 +231,23 @@
         // let userPic = result.graphql.user.profile_pic_url_hd;
 
         //   $(".personal-img img").attr("src", userPic);
+      });
+
+      $(".relative-btn-left").addClass("hide");
+
+      let scrollLeft = 0;
+      $(".relative-btn-right").click(function () {
+        scrollLeft += 100;
+        $(".relative-accounts").scrollLeft(scrollLeft);
+
+        if (scrollLeft > 0) $(".relative-btn-left").removeClass("hide");
+      });
+
+      $(".relative-btn-left").click(function () {
+        scrollLeft -= 100;
+        $(".relative-accounts").scrollLeft(scrollLeft);
+
+        if (scrollLeft === 0) $(".relative-btn-left").addClass("hide");
       });
     </script>
 
