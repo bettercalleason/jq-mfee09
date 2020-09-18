@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>offset</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 220px;
+        background-color: #ccc;
+        padding: 10px 20px;
+        border: 5px solid red;
+        margin: 150px 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      console.log("offset:", $(".box").offset());
+      console.log("offset left:", $(".box").offset().left);
+      console.log("offset top:", $(".box").offset().top);
+    </script>
+  </body>
+</html>

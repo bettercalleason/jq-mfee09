@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>instagram</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./52.instagram.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="logo">
+            <img
+              src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+              alt=""
+            />
+          </div>
+          <div class="search-input">
+            <input type="text" placeholder="搜尋" />
+          </div>
+          <div class="login-area">
+            <button class="btn btn-primary btn-sm">登入</button>
+            <button class="btn btn-link btn-sm">註冊</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="personal-img-area col-3">
+            <div class="personal-img">
+              <img
+                src="https://instagram.ftpe7-4.fna.fbcdn.net/v/t51.2885-19/s320x320/116870895_2761740814046919_412789886659001746_n.jpg?_nc_ht=instagram.ftpe7-4.fna.fbcdn.net&_nc_ohc=QKrIf4vHhXIAX-3GLQZ&oh=3e3fdc846a0fd52d3c2b1e6a1fe90b9e&oe=5F8BA8CB"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="personal-info-area col-4">
+            <div class="first-row">
+              <span class="username">gqtaiwan</span>
+              <span class="check"></span>
+              <a href="" class="btn btn-primary">追蹤</a>
+            </div>
+            <div class="sec-row mt-3 d-flex">
+              <div class="post">
+                <span class="post-number font-weight-bold">2345</span>
+                <span>貼文</span>
+              </div>
+              <div class="follower">
+                <span class="follower-number font-weight-bold">15.3</span>
+                <span>萬</span>
+              </div>
+              <div class="following">
+                <span class="following-number font-weight-bold">15.3</span>
+                <span>萬</span>
+              </div>
+            </div>
+
+            <div class="third-row mt-3">
+              <p class="user-fullname font-weight-bold">GQ Taiwan</p>
+              <p class="info-text">
+                To become a better man, follow GQ Taiwan. 更多精彩內容請至
+              </p>
+              <p>gq.com.tw/instagram</p>
+            </div>
+          </div>
+        </div>
+        <div class="row hightlight justify-content-around"></div>
+
+        <div class="row justify-content-center">
+          <div class="pageLink small font-weight-bold">貼文</div>
+          <div class="pageLink small font-weight-bold">IGTV</div>
+          <div class="pageLink small font-weight-bold">已標註</div>
+        </div>
+
+        <div class="row content-area">
+          <!-- <div class="col-4 position-relative overflow-hidden p-4">
+            <img
+              src="https://instagram.ftpe7-4.fna.fbcdn.net/v/t51.2885-15/fr/e15/s1080x1080/119459958_170285457935801_2553482051621743888_n.jpg?_nc_ht=instagram.ftpe7-4.fna.fbcdn.net&_nc_cat=105&_nc_ohc=orxpPjLZOywAX-H5jtR&oh=95b46a1f408ac924369f0ed2836a1b96&oe=5F8D0951"
+              alt=""
+            />
+          </div>
+          <div class="col-4 position-relative overflow-hidden p-4">
+            <img
+              src="https://instagram.ftpe7-4.fna.fbcdn.net/v/t51.2885-15/fr/e15/s1080x1080/119459958_170285457935801_2553482051621743888_n.jpg?_nc_ht=instagram.ftpe7-4.fna.fbcdn.net&_nc_cat=105&_nc_ohc=orxpPjLZOywAX-H5jtR&oh=95b46a1f408ac924369f0ed2836a1b96&oe=5F8D0951"
+              alt=""
+            />
+          </div>
+          <div class="col-4 position-relative overflow-hidden p-4">
+            <img
+              src="https://instagram.ftpe7-4.fna.fbcdn.net/v/t51.2885-15/fr/e15/s1080x1080/119459958_170285457935801_2553482051621743888_n.jpg?_nc_ht=instagram.ftpe7-4.fna.fbcdn.net&_nc_cat=105&_nc_ohc=orxpPjLZOywAX-H5jtR&oh=95b46a1f408ac924369f0ed2836a1b96&oe=5F8D0951"
+              alt=""
+            />
+          </div> -->
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //起手式取得 userID
+      //https://www.instagram.com/gqtaiwan/?__a=1
+
+      //取得前 12 篇文章
+      //https://www.instagram.com/graphql/query/?query_id=17888483320059182&id=1371344513&first=12
+
+      //取得後 12 篇文章(after 後面參數可能會改變)
+      //https://www.instagram.com/graphql/query/?query_id=17888483320059182&id=1371344513&first=12&after=QVFDME1XY0VoWnI2V1pTaVhKVEZfaG0zU2xIQ3h3OXYyd2VYaERrNGdMb0pTT0hqajBySXV4YkZibWdVaVVaMzRjOVBFNEFhTTVFSjdSOWJwUHlLNjZmUA==
+
+      //Highlight url encode
+      //https://www.instagram.com/graphql/query/?query_hash=d4d88dc1500312af6f937f7b804c68c3&variables=%7B%22user_id%22%3A%221371344513%22%2C%22include_chaining%22%3Atrue%2C%22include_reel%22%3Atrue%2C%22include_suggested_users%22%3Afalse%2C%22include_logged_out_extras%22%3Afalse%2C%22include_highlight_reels%22%3Atrue%2C%22include_live_status%22%3Atrue%7D
+
+      //Highlight url decode 
+      //https://www.instagram.com/graphql/query/?query_hash=d4d88dc1500312af6f937f7b804c68c3&variables={"user_id":"1371344513","include_chaining":true,"include_reel":true,"include_suggested_users":false,"include_logged_out_extras":false,"include_highlight_reels":true,"include_live_status":true}
+
+      $.ajax({
+        url: "http://192.168.27.35:3000/ig2",
+      }).done(function (result) {
+        console.log("result", result.data.user.edge_highlight_reels.edges);
+
+        let highlightArray = result.data.user.edge_highlight_reels.edges;
+
+        for (let i = 0; i < highlightArray.length; i++) {
+          let htmlString = `<div class="circle">
+          <img
+            src="${highlightArray[i].node.cover_media_cropped_thumbnail.url}"
+            alt=""
+          />
+          <p class="font-weight-bold mt-2 text-center small">${highlightArray[i].node.title}</p>
+        </div>`;
+
+          $(".hightlight").append(htmlString);
+        }
+
+        // let highlightArray = result.graphql.user.edge_highlight_reels.edges;
+
+        // for (i=0; i < highlightArray.length; i++){
+        //     $('.highlight').append('<div class="circle">
+        //       <img src="url" alt="">
+        //       <p>title</p>
+        //   </div>')
+
+        // }
+
+        // let userPic = result.graphql.user.profile_pic_url_hd;
+
+        //   $(".personal-img img").attr("src", userPic);
+      });
+
+      $.ajax({
+        url: "http://192.168.27.35:3000/ig3",
+      }).done(function (result) {
+        console.log(
+          "result",
+          result.data.user.edge_owner_to_timeline_media.edges
+        );
+
+        let articleArray = result.data.user.edge_owner_to_timeline_media.edges;
+
+        for (let i = 0; i < articleArray.length; i++) {
+          let htmlString = `<div class="col-4 position-relative overflow-hidden p-4">
+            <img
+              src="${articleArray[i].node.display_url}"
+              alt=""
+            />
+          </div>`;
+
+          $(".content-area").append(htmlString);
+        }
+
+        // let highlightArray = result.graphql.user.edge_highlight_reels.edges;
+
+        // for (i=0; i < highlightArray.length; i++){
+        //     $('.highlight').append('<div class="circle">
+        //       <img src="url" alt="">
+        //       <p>title</p>
+        //   </div>')
+
+        // }
+
+        // let userPic = result.graphql.user.profile_pic_url_hd;
+
+        //   $(".personal-img img").attr("src", userPic);
+      });
+    </script>
+
+    <script></script>
+  </body>
+</html>

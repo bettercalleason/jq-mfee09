@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>instagram</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./52.instagram.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="logo">
+            <img
+              src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+              alt=""
+            />
+          </div>
+          <div class="search-input">
+            <input type="text" placeholder="搜尋" />
+          </div>
+          <div class="login-area">
+            <button class="btn btn-primary btn-sm">登入</button>
+            <button class="btn btn-link btn-sm">註冊</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="personal-img-area col-3">
+            <div class="personal-img">
+              <img src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $.ajax({
+        method: "GET",
+        url: "https://www.instagram.com/gqtaiwan/?__a=1",
+      }).done(function (result) {
+        console.log("user_img", result.graphql.user.profile_pic_url_hd);
+      });
+    </script>
+  </body>
+</html>

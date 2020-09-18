@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css animate</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <style>
+      body {
+        margin: 50px;
+      }
+
+      .wrap {
+        width: 800px;
+        height: 400px;
+        background-color: #ccc;
+        margin: 10px;
+        padding: 20px;
+        position: relative;
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+        padding: 20px 40px;
+        margin: 10px 20px;
+        background-color: #afa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <button>bounce</button>
+      <button>shakeX</button>
+      <div class="box animate__animated"></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("button").click(function () {
+        let animate = "animate__" + $(this).text();
+
+        $(".box")
+          .addClass(animate)
+          .one("animationend", function () {
+            $(this).removeClass(animate);
+          });
+      });
+    </script>
+  </body>
+</html>

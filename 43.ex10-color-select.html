@@ -13,12 +13,12 @@
     <style>
       .color-demo-area {
         height: 400px;
-        background-color: #777;
+        background: #777;
       }
 
       .color-select-area {
         height: 400px;
-        background-color: #eee;
+        background: #eee;
       }
 
       .color-select {
@@ -43,7 +43,7 @@
 
             <div
               class="color-select rounded-circle"
-              style="background: lightcoral"
+              style="background: lightseagreen"
             ></div>
           </div>
         </div>
@@ -55,6 +55,10 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    <script></script>
+    <script>
+      $(".color-select").click(function () {
+        $(".color-demo-area").css("background", $(this).css("background"));
+      });
+    </script>
   </body>
 </html>

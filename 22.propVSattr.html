@@ -6,13 +6,19 @@
     <title>prop vs attr</title>
   </head>
   <body>
-    <input type="checkbox" class="checkbox-1" checked="true" />
-    <!-- <span>如果你願意捐發票請打勾</span>
-    <br /> -->
+    <span>checkbox1</span>
+    <input type="checkbox" class="checkbox-1" checked />
 
-    <input type="checkbox" class="checkbox-2" />
-    <span>如果你不願意捐發票請打勾</span>
-    <input type="checkbox" class="checkbox-3" checked="false" />
+    <br />
+
+    <span>checkbox2</span>
+    <input type="text" class="checkbox-2" checked />
+    <br />
+
+    <span>checkbox3</span>
+    <input type="password" class="checkbox-3 12345" checked />
+
+    <button>click</button>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
@@ -20,12 +26,16 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      //   console.log($(".checkbox-1").prop("checked")); //true
-      //   console.log($(".checkbox-1").attr("checked")); //checked
+      console.log($(".checkbox-1").prop("checked")); //true
+      console.log($(".checkbox-1").attr("checked")); //checked
       console.log($(".checkbox-2").prop("checked")); //false
       console.log($(".checkbox-2").attr("checked")); //undefined
-      //   $(".checkbox-3").prop("checked"); //true（註 3）
-      //   $(".checkbox-3").attr("checked"); //checked 
+      console.log($(".checkbox-3").prop("checked")); //true（註 3）
+      console.log($(".checkbox-3").attr("class", "123")); //checked
+
+      $("button").click(function () {
+        $(".123").attr("type", "text");
+      });
     </script>
   </body>
 </html>

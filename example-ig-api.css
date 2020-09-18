@@ -1,0 +1,97 @@
+header {
+  position: fixed;
+  width: 100%;
+  height: 54px;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  z-index: 1;
+  padding: 10px;
+}
+
+main {
+  padding-top: 80px;
+  height: 300vh;
+}
+.personal-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0px 3px red inset;
+}
+.personal-img img {
+  height: 90%;
+  width: 90%;
+  transform: translate(5%, 5%);
+  border-radius: 50%;
+}
+
+span.check {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  background-image: url('https://www.instagram.com/static/bundles/es6/sprite_core_32f0a4f27407.png/32f0a4f27407.png');
+  background-position: 0 -369px;
+  background-repeat: no-repeat;
+}
+
+.sec-row {
+  margin-top: 20px;
+}
+
+.post-number,
+.follower-number,
+.following {
+  margin-right: 6px;
+}
+
+.third-row {
+  margin-top: 30px;
+  line-height: 0.8rem;
+}
+
+.info-text {
+  font-size: 0.9rem;
+}
+
+.hightlight {
+  padding-top: 40px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #ccc;
+}
+
+.circle {
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  box-shadow: 0 0 0px 1px #ccc inset;
+}
+
+.circle img {
+  width: 90%;
+  height: 90%;
+  transform: translate(5%, 5%);
+  border-radius: 50%;
+}
+
+.pageLink {
+  text-align: center;
+  width: 40px;
+  margin: -1px 40px;
+  padding-top: 20px;
+  border-top: 1px solid #000;
+}
+
+.content-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}

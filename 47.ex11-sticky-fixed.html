@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sticky</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        height: 300vh;
+      }
+
+      header {
+        height: 200px;
+      }
+
+      nav {
+        background-color: #faf;
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+      }
+
+      nav.fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <nav class="nav">I'm nav</nav>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let navTop = $("nav").offset().top;
+
+      $(window).scroll(function () {
+        let scrollTop = $(this).scrollTop();
+
+        if (scrollTop >= navTop) {
+          $("nav").addClass("fixed");
+        } else {
+          $("nav").removeClass("fixed");
+        }
+      });
+    </script>
+  </body>
+</html>
